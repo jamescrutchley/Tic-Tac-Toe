@@ -1,0 +1,10 @@
+.container {
+    display: grid;
+    grid-template: repeat(3, 30vh) / repeat(3, 30vh);
+}
+
+.cell {
+    border: black 3px solid;
+    width: auto;
+    height: auto;
+}
