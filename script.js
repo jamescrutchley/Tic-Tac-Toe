@@ -2,6 +2,7 @@ const gridUI = document.querySelectorAll('.cell');
 const warning = document.querySelector('.warning');
 const gameStatus = document.querySelector('.gameStatus');
 const resetButton = document.querySelector('.reset')
+const resetProgress = document.querySelector('.inner-reset-bar');
 
 const Gameboard = (() => {
     let state = [null, null, null, null, null, null, null, null, null];
@@ -93,6 +94,7 @@ const Game = (() => {
     const restart = () => {
         console.log('restarting in 5 seconds');
         setTimeout(location.reload.bind(window.location), 5000);
+        resetProgress.classList.add('resetting');
     }
 
     return { currentTurn, turn, win, restart }

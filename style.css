@@ -81,3 +81,37 @@ body {
 .blue {
     background-color: blue;
 }
+
+
+.reset-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.reset-bar {
+    height: 10px;
+    width: 100px;
+    border: 1px solid black;
+
+    position: absolute;
+    bottom: 2em;
+    align-self: center;
+}
+
+.resetting {
+    border: 1px solid black;
+    animation: fill 5s linear 2;
+    height: 10px;
+    width: 100px;
+    background-color: pink;
+}
+
+@keyframes fill {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 100px;
+    }
+  }
