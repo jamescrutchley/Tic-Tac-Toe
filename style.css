@@ -1,13 +1,77 @@
+:root * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 90vh;
+    font-size: 1.5rem;
+
+    display: grid;
+    grid-template-rows: 1fr 2.5fr 1fr;
+    grid-template-areas: 
+    "header"
+    "game"
+    "footer";
+    gap: 1em;
+    align-items: center; 
+    justify-content: center;
+
+    padding: -1em;
+}
+
+.info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5em;
+
+    grid-area: header;
+    text-transform: capitalize;
+}
+
+.info * {
+    padding: 0;
+    margin: 0;
+    align-self: center;
+}
+
+.info h1 {
+    align-self: center;
+    margin: 0.5em 0em 1em 0em;
+}
 
 .container {
+    width: fit-content;
+    height: fit-content;
     display: grid;
-    grid-template: repeat(3, 30vh) / repeat(3, 30vh);
+    grid-template: repeat(3, 33%) / repeat(3, 33%);
+    grid-area: game;
+
+    align-items: center;
+    justify-content: center;
+
+    justify-self: center;
+    margin: 0;
+    padding: 0;
 }
 
 .cell {
     border: black 3px solid;
-    width: auto;
-    height: auto;
+    width: 15vh;
+    height: 15vh;
+}
+
+.reset {
+    padding: 0em;
+    margin: 0em;
+
+    background-color: transparent;
+    border: none;
+}
+
+.reset:hover {
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .green {

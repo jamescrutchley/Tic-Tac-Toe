@@ -1,6 +1,7 @@
 const gridUI = document.querySelectorAll('.cell');
 const warning = document.querySelector('.warning');
 const gameStatus = document.querySelector('.gameStatus');
+const resetButton = document.querySelector('.reset')
 
 const Gameboard = (() => {
     let state = [null, null, null, null, null, null, null, null, null];
@@ -36,7 +37,7 @@ const Gameboard = (() => {
             refreshBoard(marker, position);
             return true;
         } else {
-            warning.textContent = 'Invalid Move';
+            alert('Invalid Move');
         }
     }
 // is wipeboard necessary? Just refresh page?
@@ -94,10 +95,12 @@ const Game = (() => {
         setTimeout(location.reload.bind(window.location), 5000);
     }
 
-    return { currentTurn, turn, win }
+    return { currentTurn, turn, win, restart }
 })()
 
 
 gridUI.forEach(div => div.addEventListener('click', function() {
     Game.currentTurn(div.dataset.index);
 }));
+
+resetButton.addEventListener('click', Game.restart);
